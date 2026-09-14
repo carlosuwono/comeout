@@ -1,5 +1,5 @@
 body {
-    position: absolute;
+    position: fixed;
     background-image: url("Assets/Background.png");
     background-repeat: no-repeat;
     background-size: cover;
@@ -22,9 +22,54 @@ section.Screen.Active{
     display: flex;
 }
 
+button{
+    font-size: 1.5rem;
+    z-index: 3;
+    height: 50px;
+    width: 200px;
+    position: absolute;
+    right: 10vw;
+    bottom: 10vh;
+}
+
+button:hover{
+    background-color: #250905;
+}
+
 div.Door{
     height: 100vh;
     width: 50%;
+}
+
+div.intro{
+    background-color: #f0f0f0;
+    border-radius: 1rem;
+    border: 6px solid #101010;
+    color: #101010;
+    margin: auto;
+    padding: 4rem;
+    width: 65%;
+}
+
+p{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 2rem;
+    line-height: 3rem;
+    text-align: center;
+    font-family: "sofia-pro-narrow", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+p.fancy{
+    font-family: "p22-operina-pro", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+span.red{
+    color: rgb(150, 10, 10);
+    font-weight: 700;
 }
 
 img.Door{
