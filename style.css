@@ -1,5 +1,5 @@
 body {
-    position: fixed;
+    position: absolute;
     background-image: url("Assets/Background.png");
     background-repeat: no-repeat;
     background-size: cover;
