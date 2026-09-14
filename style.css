@@ -1,0 +1,45 @@
+body {
+    position: fixed;
+    background-image: url("Assets/Background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center bottom;
+    background-attachment: fixed;
+    background-color: #250905;
+    width: 100vw;
+    z-index: 0;
+    padding: 0;
+    margin: 0;
+}
+
+section.Screen{
+    display: none;
+    width: 100vw;
+    height: 100vh;
+}
+
+section.Screen.Active{
+    display: flex;
+}
+
+div.Door{
+    height: 100vh;
+    width: 50%;
+}
+
+img.Door{
+    height: 100vh;
+    overflow: visible;
+}
+
+img.Left{
+    position: absolute;
+    left: 0;
+    z-index: 2;
+}
+
+img.Right{
+    position: absolute;
+    right: 0;
+    z-index: 1;
+}

@@ -1,2 +1,0 @@
-# comeout
-Design Research Kit
