@@ -42,6 +42,58 @@ body.first{
     transition: background-position 3s ease;
 }
 
+body.second{
+    background-position: 0% 100%,
+    50% 100%,
+    50% 100%,
+    50% 100%,
+    50% 100%,
+    50% 500%,
+    50% 100%,
+    50% 500%,
+    50% 100%;
+    transition: background-position 3s ease;
+}
+
+body.third{
+    background-position: 0% 100%,
+    50% 100%,
+    50% 100%,
+    50% 100%,
+    50% 500%,
+    50% 500%,
+    50% 100%,
+    50% 500%,
+    50% 100%;
+    transition: background-position 3s ease;
+}
+
+body.fourth{
+    background-position: 0% 100%,
+    50% 500%,
+    50% 100%,
+    50% 100%,
+    50% 500%,
+    50% 500%,
+    50% 100%,
+    50% 500%,
+    50% 100%;
+    transition: background-position 3s ease;
+}
+
+body.fifth{
+    background-position: 0% 100%,
+    50% 500%,
+    50% 500%,
+    50% 100%,
+    50% 500%,
+    50% 500%,
+    50% 100%,
+    50% 500%,
+    50% 100%;
+    transition: background-position 3s ease;
+}
+
 section.Blur{
     background-color: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(10px);
@@ -94,7 +146,7 @@ div.Button{
     align-items: center;
 }
 
-div.Button1{
+div.Next{
     width: 100vw;
     display: flex;
     justify-content: center;
@@ -114,6 +166,20 @@ button{
     filter: drop-shadow(0px 8px 10px rgba(0, 0, 0, 0.35));
 }
 
+button.next{
+    opacity: 0.5;
+    background-color: #999;
+    border: 4px solid #666;
+    cursor: not-allowed;
+    transition: 0.2s;
+}
+
+button.next:not(:disabled){
+    opacity: 1;
+    background-color: #1B56FD;
+    border: 4px solid #0118D8;
+    cursor: pointer;
+}
 
 div.Door{
     height: 100vh;
@@ -130,7 +196,7 @@ div.intro{
     width: 65%;
 }
 
-form{
+div.Question{
     display: flex;
     flex-direction: column;
     align-content: center;
@@ -139,9 +205,42 @@ form{
     margin: 10%;
 }
 
-form.Q1{
+div.Q1{
     background-image: url("Assets/Q_1.png");
     aspect-ratio: 5/18;
+}
+
+div.Q2{
+    background-image: url("Assets/Q_2.png");
+    aspect-ratio: 5/6;
+}
+
+div.Q3{
+    background-image: url("Assets/Q_3.png");
+    aspect-ratio: 1/3;
+    margin-left: 30%;
+    margin-right: 30%;
+}
+
+div.Q4{
+    background-image: url("Assets/Q_4.png");
+    aspect-ratio: 1/1;
+}
+
+div.Q5{
+    background-image: url("Assets/Q_5.png");
+    aspect-ratio: 8/17;
+    margin-left: 30%;
+    margin-right: 30%;
+}
+
+div.Q52{
+    background-image: url("Assets/Q_52.png");
+    aspect-ratio: 8/17;
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 p{
@@ -199,37 +298,121 @@ img.MoveRight{
 }
 
 .rating {
-  display: flex;
-  flex-direction: row-reverse;
-  gap: 27.5px;
-  margin-left: auto;
-  margin-right: auto;
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 27.5px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .rating input {
-  display: none;
+    display: none;
 }
 
 .rating label {
-  display: inline-block;
-  width: 70px;
-  height: 70px;
-  cursor: pointer;
+    display: inline-block;
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
 
-  background-color: white;
-  
-  -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8.79 11.7"><path d="M7.84,0c-.28.2-.16.3-.35.58s-.25.24-.44.52-.14.32-.33.6-.24.25-.43.53-.19.29-.38.57-.17.3-.37.58-.23.26-.41.55c-.09.22-.13.45-.21.66-.08.22-.2.42-.26.64-.07.23-.05.47-.1.69-.05.23-.1.45-.12.67s-.08.47-.09.7c-.03-.21-.08-.43-.13-.64s-.13-.4-.19-.61-.14-.39-.22-.6c-.07-.19-.09-.42-.18-.62-.18-.29-.16-.3-.36-.58s-.22-.26-.41-.54-.17-.29-.36-.58-.19-.28-.38-.56-.21-.27-.4-.55-.23-.26-.42-.54-.09-.38-.37-.57c-.15.18-.26.39-.37.59s-.19.42-.27.65-.19.43-.23.67C.02,3.03,0,3.26,0,3.51c0,.23.04.46.06.7.02.23-.03.47.01.71.04.22.1.46.16.69.05.22.21.42.28.66.07.22.05.48.13.71.08.22.24.4.34.63.18.3.15.31.34.6s.16.31.35.6.26.24.45.53.17.31.36.59.19.29.39.58.23.27.42.56.04.44.33.63c.12-.23.26-.5.35-.74s.21-.48.28-.73.1-.51.14-.77.03-.53.04-.79c.04.25.08.5.15.74s.18.46.27.69.21.51.32.73c.28-.2.12-.36.32-.64s.27-.24.46-.53.18-.29.38-.58.15-.32.34-.61.18-.3.37-.59.19-.29.39-.58.25-.25.43-.55c.09-.23.18-.45.26-.67.08-.23.16-.46.23-.67.07-.23.06-.48.12-.71.06-.24.11-.47.15-.69.04-.24.15-.47.17-.69.02-.25,0-.49,0-.71,0-.25-.02-.48-.06-.71-.04-.24-.09-.48-.16-.69-.08-.23-.22-.42-.33-.62s-.23-.41-.39-.59Z"/></svg>');
-  mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8.79 11.7"><path d="M7.84,0c-.28.2-.16.3-.35.58s-.25.24-.44.52-.14.32-.33.6-.24.25-.43.53-.19.29-.38.57-.17.3-.37.58-.23.26-.41.55c-.09.22-.13.45-.21.66-.08.22-.2.42-.26.64-.07.23-.05.47-.1.69-.05.23-.1.45-.12.67s-.08.47-.09.7c-.03-.21-.08-.43-.13-.64s-.13-.4-.19-.61-.14-.39-.22-.6c-.07-.19-.09-.42-.18-.62-.18-.29-.16-.3-.36-.58s-.22-.26-.41-.54-.17-.29-.36-.58-.19-.28-.38-.56-.21-.27-.4-.55-.23-.26-.42-.54-.09-.38-.37-.57c-.15.18-.26.39-.37.59s-.19.42-.27.65-.19.43-.23.67C.02,3.03,0,3.26,0,3.51c0,.23.04.46.06.7.02.23-.03.47.01.71.04.22.1.46.16.69.05.22.21.42.28.66.07.22.05.48.13.71.08.22.24.4.34.63.18.3.15.31.34.6s.16.31.35.6.26.24.45.53.17.31.36.59.19.29.39.58.23.27.42.56.04.44.33.63c.12-.23.26-.5.35-.74s.21-.48.28-.73.1-.51.14-.77.03-.53.04-.79c.04.25.08.5.15.74s.18.46.27.69.21.51.32.73c.28-.2.12-.36.32-.64s.27-.24.46-.53.18-.29.38-.58.15-.32.34-.61.18-.3.37-.59.19-.29.39-.58.25-.25.43-.55c.09-.23.18-.45.26-.67.08-.23.16-.46.23-.67.07-.23.06-.48.12-.71.06-.24.11-.47.15-.69.04-.24.15-.47.17-.69.02-.25,0-.49,0-.71,0-.25-.02-.48-.06-.71-.04-.24-.09-.48-.16-.69-.08-.23-.22-.42-.33-.62s-.23-.41-.39-.59Z"/></svg>');
+    background-color: white;
+    
+    -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8.79 11.7"><path d="M7.84,0c-.28.2-.16.3-.35.58s-.25.24-.44.52-.14.32-.33.6-.24.25-.43.53-.19.29-.38.57-.17.3-.37.58-.23.26-.41.55c-.09.22-.13.45-.21.66-.08.22-.2.42-.26.64-.07.23-.05.47-.1.69-.05.23-.1.45-.12.67s-.08.47-.09.7c-.03-.21-.08-.43-.13-.64s-.13-.4-.19-.61-.14-.39-.22-.6c-.07-.19-.09-.42-.18-.62-.18-.29-.16-.3-.36-.58s-.22-.26-.41-.54-.17-.29-.36-.58-.19-.28-.38-.56-.21-.27-.4-.55-.23-.26-.42-.54-.09-.38-.37-.57c-.15.18-.26.39-.37.59s-.19.42-.27.65-.19.43-.23.67C.02,3.03,0,3.26,0,3.51c0,.23.04.46.06.7.02.23-.03.47.01.71.04.22.1.46.16.69.05.22.21.42.28.66.07.22.05.48.13.71.08.22.24.4.34.63.18.3.15.31.34.6s.16.31.35.6.26.24.45.53.17.31.36.59.19.29.39.58.23.27.42.56.04.44.33.63c.12-.23.26-.5.35-.74s.21-.48.28-.73.1-.51.14-.77.03-.53.04-.79c.04.25.08.5.15.74s.18.46.27.69.21.51.32.73c.28-.2.12-.36.32-.64s.27-.24.46-.53.18-.29.38-.58.15-.32.34-.61.18-.3.37-.59.19-.29.39-.58.25-.25.43-.55c.09-.23.18-.45.26-.67.08-.23.16-.46.23-.67.07-.23.06-.48.12-.71.06-.24.11-.47.15-.69.04-.24.15-.47.17-.69.02-.25,0-.49,0-.71,0-.25-.02-.48-.06-.71-.04-.24-.09-.48-.16-.69-.08-.23-.22-.42-.33-.62s-.23-.41-.39-.59Z"/></svg>');
+    mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8.79 11.7"><path d="M7.84,0c-.28.2-.16.3-.35.58s-.25.24-.44.52-.14.32-.33.6-.24.25-.43.53-.19.29-.38.57-.17.3-.37.58-.23.26-.41.55c-.09.22-.13.45-.21.66-.08.22-.2.42-.26.64-.07.23-.05.47-.1.69-.05.23-.1.45-.12.67s-.08.47-.09.7c-.03-.21-.08-.43-.13-.64s-.13-.4-.19-.61-.14-.39-.22-.6c-.07-.19-.09-.42-.18-.62-.18-.29-.16-.3-.36-.58s-.22-.26-.41-.54-.17-.29-.36-.58-.19-.28-.38-.56-.21-.27-.4-.55-.23-.26-.42-.54-.09-.38-.37-.57c-.15.18-.26.39-.37.59s-.19.42-.27.65-.19.43-.23.67C.02,3.03,0,3.26,0,3.51c0,.23.04.46.06.7.02.23-.03.47.01.71.04.22.1.46.16.69.05.22.21.42.28.66.07.22.05.48.13.71.08.22.24.4.34.63.18.3.15.31.34.6s.16.31.35.6.26.24.45.53.17.31.36.59.19.29.39.58.23.27.42.56.04.44.33.63c.12-.23.26-.5.35-.74s.21-.48.28-.73.1-.51.14-.77.03-.53.04-.79c.04.25.08.5.15.74s.18.46.27.69.21.51.32.73c.28-.2.12-.36.32-.64s.27-.24.46-.53.18-.29.38-.58.15-.32.34-.61.18-.3.37-.59.19-.29.39-.58.25-.25.43-.55c.09-.23.18-.45.26-.67.08-.23.16-.46.23-.67.07-.23.06-.48.12-.71.06-.24.11-.47.15-.69.04-.24.15-.47.17-.69.02-.25,0-.49,0-.71,0-.25-.02-.48-.06-.71-.04-.24-.09-.48-.16-.69-.08-.23-.22-.42-.33-.62s-.23-.41-.39-.59Z"/></svg>');
 
-  mask-size: contain;
-  -webkit-mask-size: contain;
-  mask-repeat: no-repeat;
-  -webkit-mask-repeat: no-repeat;
-  mask-position: center;
-  -webkit-mask-position: center;
+    mask-size: contain;
+    -webkit-mask-size: contain;
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+    mask-position: center;
+    -webkit-mask-position: center;
 }
 
 .rating input:checked ~ label,
 .rating input:checked ~ label ~ label {
-  background-color: yellowgreen;
+    background-color: yellowgreen;
+}
+
+.powertype{
+    display: flex;
+    gap: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 200px;
+}
+
+.powertype input {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 250px;
+    height: 125px;
+    border-radius: 45%;
+    border: 1px solid #999966;
+    background: transparent;
+    cursor: pointer;
+    transition: border-color 0.2s;
+}
+
+.powertype input:checked{
+    border: 3px solid maroon;
+    background: transparent;
+}
+
+.identity{
+    display: flex;
+    flex-direction: column;
+    gap: 19px;
+    margin-left: 38px;
+    margin-top: 285px;
+}
+
+.identity input {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 10%;
+    border: 2px solid black;
+    background: transparent;
+    cursor: pointer;
+    transition: border-color 0.2s;
+}
+
+.identity input:checked{
+    background: green;
+}
+
+textarea{
+    margin-left: auto; 
+    margin-right: auto; 
+    background: none; 
+    font-size: 2em; 
+    text-align: center;
+    border: none;
+    color: blue;
+    font-family: 'sofia-pro-narrow';
+}
+
+textarea.memory{
+    margin-top: 300px; 
+    width: 90%; 
+    height: 200px;
+}
+
+textarea.feeling{
+    margin-top: 250px; 
+    width: 50%; 
+    height: 100px;
+}
+
+textarea.fear{
+    margin-top: 760px; 
+    width: 60%; 
+    height: 250px;
+}
+
+textarea.change{
+    margin-top: 225px; 
+    width: 70%; 
+    height: 140px;
 }
