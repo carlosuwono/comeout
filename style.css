@@ -208,10 +208,17 @@ div.Question{
 div.Q1{
     background-image: url("Assets/Q_1.png");
     aspect-ratio: 5/18;
+    margin-left: 20%;
+    margin-right: 20%;
 }
 
 div.Q2{
     background-image: url("Assets/Q_2.png");
+    aspect-ratio: 5/6;
+}
+
+div.Q25{
+    background-image: url("Assets/Feeling_Activity.png");
     aspect-ratio: 5/6;
 }
 
@@ -300,7 +307,7 @@ img.MoveRight{
 .rating {
     display: flex;
     flex-direction: row-reverse;
-    gap: 27.5px;
+    gap: 23px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -311,8 +318,8 @@ img.MoveRight{
 
 .rating label {
     display: inline-block;
-    width: 70px;
-    height: 70px;
+    width: 50px;
+    height: 50px;
     cursor: pointer;
 
     background-color: white;
