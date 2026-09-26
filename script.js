@@ -19,14 +19,23 @@ const Q5Button = document.getElementById("B5");
 const Q51Button = document.getElementById("B51");
 const Q52Button = document.getElementById("B52");
 
-const Q1Screen = document.getElementById('Q1');
-const Q2Screen = document.getElementById('Q2');
-const Q25Screen = document.getElementById('Q25');
-const Q3Screen = document.getElementById('Q3');
-const Q4Screen = document.getElementById('Q4');
-const Q5Screen = document.getElementById('Q5');
-const Q51Screen = document.getElementById('Q51');
-const Q52Screen = document.getElementById('Q52');
+const Q1Screen = document.getElementById('S1');
+const Q2Screen = document.getElementById('S2');
+const Q25Screen = document.getElementById('S25');
+const Q3Screen = document.getElementById('S3');
+const Q4Screen = document.getElementById('S4');
+const Q5Screen = document.getElementById('S5');
+const Q51Screen = document.getElementById('S51');
+const Q52Screen = document.getElementById('S52');
+
+const Question1 = document.getElementById('Q1');
+const Question2 = document.getElementById('Q2');
+const Question25 = document.getElementById('Q25');
+const Question3 = document.getElementById('Q3');
+const Question4 = document.getElementById('Q4');
+const Question5 = document.getElementById('Q5');
+const Question51 = document.getElementById('Q51');
+const Question52 = document.getElementById('Q52');
 
 const form = document.getElementById('Questionnaire');
 
@@ -51,8 +60,8 @@ openButton.addEventListener('click', function() {
 });
 
 
-function transition(hideEl, showEl, options = {}) {
-    const { addBgClass, removeBgClass } = options;
+function transition(hideEl, showEl, questionEl, options = {}) {
+    const { addBgClass, removeBgClass, bgClass } = options;
 
     if (hideEl) {
         hideEl.classList.remove('Show');
@@ -66,41 +75,51 @@ function transition(hideEl, showEl, options = {}) {
         }, 1000);
     }
 
+    if (bgClass) {
+        questionEl.classList.add(bgClass);
+    }
+
+    const deferredImages = showEl.querySelectorAll('img[data-src]');
+    deferredImages.forEach(function(img) {
+        img.src = img.dataset.src;
+        img.removeAttribute('data-src');
+    });
+
     showEl.classList.add('Active');
     setTimeout(function() { showEl.classList.add('Show'); }, 2000);
 }
 
 
 Q1Button.addEventListener('click', function() {
-    transition(introScreen, Q1Screen, { addBgClass: 'first' });
+    transition(introScreen, Q1Screen, Question1, { addBgClass: 'first', bgClass: 'Q1' });
 });
 
 Q2Button.addEventListener('click', function() {
-    transition(Q1Screen, Q2Screen, { addBgClass: 'second', removeBgClass: 'first' });
+    transition(Q1Screen, Q2Screen, Question2, { addBgClass: 'second', removeBgClass: 'first', bgClass: 'Q2'});
 });
 
 Q25Button.addEventListener('click', function() {
-    transition(Q2Screen, Q25Screen, {});
+    transition(Q2Screen, Q25Screen, Question25, { bgClass: 'Q25'});
 });
 
 Q3Button.addEventListener('click', function() {
-    transition(Q25Screen, Q3Screen, { addBgClass: 'third', removeBgClass: 'second' });
+    transition(Q25Screen, Q3Screen, Question3, { addBgClass: 'third', removeBgClass: 'second', bgClass: 'Q3' });
 });
 
 Q4Button.addEventListener('click', function() {
-    transition(Q3Screen, Q4Screen, { addBgClass: 'fourth', removeBgClass: 'third' });
+    transition(Q3Screen, Q4Screen, Question4, { addBgClass: 'fourth', removeBgClass: 'third', bgClass: 'Q4' });
 });
 
 Q5Button.addEventListener('click', function() {
-    transition(Q4Screen, Q5Screen, { addBgClass: 'fifth', removeBgClass: 'fourth' });
+    transition(Q4Screen, Q5Screen, Question5, { addBgClass: 'fifth', removeBgClass: 'fourth', bgClass: 'Q5' });
 });
 
 Q51Button.addEventListener('click', function() {
-    transition(Q5Screen, Q51Screen, {});
+    transition(Q5Screen, Q51Screen, Question51, {bgClass: 'Q51'});
 });
    
 Q52Button.addEventListener('click', function() {
-    transition(Q51Screen, Q52Screen, {});
+    transition(Q51Screen, Q52Screen, Question52, {bgClass: 'Q52'});
 });
 
 
